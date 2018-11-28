@@ -27,5 +27,5 @@ gp3
 ``` python
 ptable = df.pivot_table(...)
 ptable.columns = ['_'.join(tuple(map(str, t))) for t in ptable.columns.values]
-ptable = ptable.fillna(0).reset_index()
+ptable = ptable.reset_index()
 ```
