@@ -18,9 +18,10 @@ tags:
 方法一：
 ``` python
 gp3 = gp1.copy(deep=True)
-gp3.columns = ["_".join(x) for x in gp3.columns.ravel()]
+gp3.columns = ["_".join(x) for x in gp3.columns.ravel()]   
 gp3
 ```
+方法一有个问题，如果column是数字  "_".join(x) 会报错
 
 方法二：
 ``` python
