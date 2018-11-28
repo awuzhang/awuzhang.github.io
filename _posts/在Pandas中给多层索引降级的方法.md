@@ -15,9 +15,16 @@ tags:
 
 每次透视图生成后都不知道怎么处理才好，直到网上找到这个方法，赶紧记下来，原文(https://www.jb51.net/article/150975.htm)
 
-
+方法一：
 ``` python
 gp3 = gp1.copy(deep=True)
 gp3.columns = ["_".join(x) for x in gp3.columns.ravel()]
 gp3
+```
+
+方法二：
+``` python
+ptable = df.pivot_table(...)
+ptable.columns = ['_'.join(tuple(map(str, t))) for t in ptable.columns.values]
+ptable = ptable.fillna(0).reset_index()
 ```
