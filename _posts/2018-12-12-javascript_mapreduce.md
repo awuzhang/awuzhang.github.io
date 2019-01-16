@@ -17,6 +17,7 @@ tags:
 假设下面分章分布在各服务器，在各服务器上 map & reduce 单服的词频， 然后再汇总到1台服务器上 reduce
 
 
+``` javascript 
 // 以句号切割出数据集
 data = ['Consumer price index (CPI), a main gauge of inflation, rose 2.2 percent year-on-year in November, pulling back from the 2.5-percent gain in October, according to data from the National Bureau of Statistics (NBS).',
 'That was the first slowdown of year-on-year CPI growth in the second half of 2018.',
@@ -61,6 +62,8 @@ Promise.all( data.map(item => fun1(item)) ).then((datas) => {
 	})
 	console.log(sum)
 })
+
+```
 
 ```
 输出
